@@ -40,7 +40,7 @@
 
   <!-- Mobile menu -->
   <div 
-    class="md:hidden fixed inset-0 bg-black/90 backdrop-blur-sm transform transition-transform duration-300 translate-x-full"
+    class="md:hidden fixed inset-0 bg-black/90 backdrop-blur-sm transition-all duration-300 ease-in-out opacity-0 pointer-events-none -translate-x-full"
     id="mobileMenu"
   >
     <!-- Close button -->
@@ -65,24 +65,55 @@
   </div>
 </nav>
 
+<style>
+  /* Hamburger animation (optionnel, à adapter si besoin) */
+  #menuButton.active #line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  #menuButton.active #line2 {
+    opacity: 0;
+  }
+  #menuButton.active #line3 {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+</style>
+
 <script>
-  const navbar = document.getElementById('navbar');
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('Script navbar chargé');
   const menuButton = document.getElementById('menuButton');
   const closeButton = document.getElementById('closeButton');
   const mobileMenu = document.getElementById('mobileMenu');
   const line1 = document.getElementById('line1');
   const line2 = document.getElementById('line2');
   const line3 = document.getElementById('line3');
-  const closeLine1 = document.getElementById('closeLine1');
-  const closeLine2 = document.getElementById('closeLine2');
   let isMenuOpen = false;
 
-  // Fonction pour fermer le menu
-  const closeMenu = () => {
-    isMenuOpen = false;
-    if (mobileMenu) {
-      mobileMenu.style.transform = 'translateX(100%)';
+  console.log('menuButton =', menuButton);
+  console.log('mobileMenu =', mobileMenu);
+
+  // Animation fluide du menu mobile
+  const openMenu = () => {
+    if (!mobileMenu || !menuButton) return;
+    mobileMenu.classList.remove('opacity-0', 'pointer-events-none', '-translate-x-full');
+    mobileMenu.classList.add('opacity-100', 'pointer-events-auto', 'translate-x-0');
+    menuButton.classList.add('active');
+    isMenuOpen = true;
+    // Animation hamburger
+    if (line1 && line2 && line3) {
+      line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+      line2.style.opacity = '0';
+      line3.style.transform = 'rotate(-45deg) translate(7px, -7px)';
     }
+  };
+
+  const closeMenu = () => {
+    if (!mobileMenu || !menuButton) return;
+    mobileMenu.classList.remove('opacity-100', 'pointer-events-auto', 'translate-x-0');
+    mobileMenu.classList.add('opacity-0', 'pointer-events-none', '-translate-x-full');
+    menuButton.classList.remove('active');
+    isMenuOpen = false;
+    // Animation hamburger
     if (line1 && line2 && line3) {
       line1.style.transform = 'none';
       line2.style.opacity = '1';
@@ -90,39 +121,13 @@
     }
   };
 
-  // Ajouter un fond semi-transparent lors du scroll
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
-      navbar?.classList.add('bg-black/30', 'backdrop-blur-sm');
-    } else {
-      navbar?.classList.remove('bg-black/30', 'backdrop-blur-sm');
-    }
-  });
-
-  // Gestion du menu mobile
   menuButton?.addEventListener('click', () => {
-    isMenuOpen = !isMenuOpen;
-    
-    // Animation du menu
-    if (mobileMenu) {
-      mobileMenu.style.transform = isMenuOpen ? 'translateX(0)' : 'translateX(100%)';
-    }
-
-    // Animation des lignes du hamburger
-    if (line1 && line2 && line3) {
-      if (isMenuOpen) {
-        line1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-        line2.style.opacity = '0';
-        line3.style.transform = 'rotate(-45deg) translate(7px, -7px)';
-      } else {
-        line1.style.transform = 'none';
-        line2.style.opacity = '1';
-        line3.style.transform = 'none';
-      }
+    if (isMenuOpen) {
+      closeMenu();
+    } else {
+      openMenu();
     }
   });
-
-  // Gestion du bouton de fermeture
   closeButton?.addEventListener('click', closeMenu);
 
   // Fermer le menu en cliquant sur un lien
@@ -130,4 +135,23 @@
   mobileLinks?.forEach(link => {
     link.addEventListener('click', closeMenu);
   });
+
+  // Fermer le menu quand on clique en dehors
+  document.addEventListener('click', (event) => {
+    const menuBtn = menuButton as HTMLElement | null;
+    const menuDiv = mobileMenu as HTMLElement | null;
+    const target = event.target;
+    if (!(target instanceof Node)) return;
+    if (menuDiv && menuBtn && !menuDiv.contains(target) && !menuBtn.contains(target) && isMenuOpen) {
+      closeMenu();
+    }
+  });
+
+  // Fermer le menu quand on redimensionne l'écran vers desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 768 && isMenuOpen) {
+      closeMenu();
+    }
+  });
+});
 </script> 
