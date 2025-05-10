@@ -36,59 +36,156 @@ const cours = [
 ];
 ---
 
-<BaseLayout title="Planning - Yoga Studio Toulouse">
+<BaseLayout title="Planning - Yoga Studio">
   <Navbar />
-  <main class="pt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 class="font-playfair text-4xl text-center mb-12">Planning des Cours</h1>
+  
+  <!-- Hero section avec image de fond -->
+  <div class="relative h-[40vh] min-h-[400px]">
+    <div class="absolute inset-0">
+      <img
+        src="/images/planning-bg.jpg"
+        alt="Salle de yoga"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative h-full flex items-center justify-center">
+      <h1 class="text-4xl md:text-5xl text-white font-playfair text-center">
+        Planning des cours
+      </h1>
+    </div>
+  </div>
 
-      <!-- Légende -->
-      <div class="mb-8 flex flex-wrap justify-center gap-4">
-        <div class="flex items-center">
-          <div class="w-4 h-4 bg-ochre/20 rounded-full mr-2"></div>
-          <span class="text-sm">Tous niveaux</span>
-        </div>
-        <div class="flex items-center">
-          <div class="w-4 h-4 bg-ochre/40 rounded-full mr-2"></div>
-          <span class="text-sm">Intermédiaire</span>
-        </div>
-        <div class="flex items-center">
-          <div class="w-4 h-4 bg-ochre/60 rounded-full mr-2"></div>
-          <span class="text-sm">Avancé</span>
-        </div>
+  <main class="py-12">
+    <div class="container-custom">
+      <!-- Filtres -->
+      <div class="flex flex-wrap gap-4 justify-center mb-12">
+        <button class="btn-primary">Tous les cours</button>
+        <button class="btn-secondary">Yoga Vinyasa</button>
+        <button class="btn-secondary">Yoga Hatha</button>
+        <button class="btn-secondary">Méditation</button>
       </div>
 
       <!-- Planning -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {cours.map((journee) => (
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h2 class="font-playfair text-xl mb-4">{journee.jour}</h2>
-            <div class="space-y-4">
-              {journee.horaires.map((cours) => (
-                <div class="flex items-start justify-between p-3 rounded-md bg-ochre/10">
-                  <div>
-                    <p class="font-medium">{cours.heure}</p>
-                    <p class="text-sm text-gray-600">{cours.type}</p>
-                  </div>
-                  <span class="text-sm bg-ochre/20 px-2 py-1 rounded-full">
-                    {cours.niveau}
-                  </span>
-                </div>
-              ))}
+        <!-- Lundi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Lundi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">9h00 - 10h30</p>
+              <h3 class="text-lg font-medium">Yoga Vinyasa</h3>
+              <p class="text-gray-600">Niveau débutant</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">18h00 - 19h30</p>
+              <h3 class="text-lg font-medium">Yoga Hatha</h3>
+              <p class="text-gray-600">Tous niveaux</p>
             </div>
           </div>
-        ))}
+        </div>
+
+        <!-- Mardi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Mardi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">10h00 - 11h30</p>
+              <h3 class="text-lg font-medium">Méditation</h3>
+              <p class="text-gray-600">Tous niveaux</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">19h00 - 20h30</p>
+              <h3 class="text-lg font-medium">Yoga Vinyasa</h3>
+              <p class="text-gray-600">Niveau intermédiaire</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mercredi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Mercredi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">9h00 - 10h30</p>
+              <h3 class="text-lg font-medium">Yoga Hatha</h3>
+              <p class="text-gray-600">Tous niveaux</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">18h00 - 19h30</p>
+              <h3 class="text-lg font-medium">Yoga Vinyasa</h3>
+              <p class="text-gray-600">Niveau avancé</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Jeudi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Jeudi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">10h00 - 11h30</p>
+              <h3 class="text-lg font-medium">Méditation</h3>
+              <p class="text-gray-600">Tous niveaux</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">19h00 - 20h30</p>
+              <h3 class="text-lg font-medium">Yoga Hatha</h3>
+              <p class="text-gray-600">Niveau débutant</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vendredi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Vendredi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">9h00 - 10h30</p>
+              <h3 class="text-lg font-medium">Yoga Vinyasa</h3>
+              <p class="text-gray-600">Tous niveaux</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">18h00 - 19h30</p>
+              <h3 class="text-lg font-medium">Méditation</h3>
+              <p class="text-gray-600">Niveau intermédiaire</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Samedi -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+          <h2 class="font-playfair text-2xl mb-4">Samedi</h2>
+          <div class="space-y-4">
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">10h00 - 11h30</p>
+              <h3 class="text-lg font-medium">Yoga Hatha</h3>
+              <p class="text-gray-600">Tous niveaux</p>
+            </div>
+            <div class="border-b pb-4">
+              <p class="text-ochre font-medium">14h00 - 15h30</p>
+              <h3 class="text-lg font-medium">Yoga Vinyasa</h3>
+              <p class="text-gray-600">Niveau débutant</p>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- Note -->
       <div class="mt-12 text-center text-gray-600">
-        <p>Les cours durent 1h15. Merci d'arriver 10 minutes avant le début du cours.</p>
-        <p class="mt-2">
-          <a href="/contact" class="text-ochre hover:text-terracotta">
-            Réserver un cours →
-          </a>
-        </p>
+        <p class="mb-4">Les cours sont limités à 15 participants maximum.</p>
+        <p>Réservation obligatoire 24h à l'avance.</p>
       </div>
     </div>
   </main>
-</BaseLayout> 
+</BaseLayout>
+
+<style>
+  .btn-primary {
+    @apply bg-ochre hover:bg-terracotta text-white py-2 px-6 rounded-md transition-colors;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-ochre text-ochre hover:bg-ochre hover:text-white py-2 px-6 rounded-md transition-colors;
+  }
+</style> 

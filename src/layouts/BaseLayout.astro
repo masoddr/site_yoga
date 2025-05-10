@@ -1,6 +1,9 @@
 ---
 // Base layout with common elements
 import ScrollToTop from '../components/ScrollToTop.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
 
 interface Props {
   title: string;
@@ -22,8 +25,10 @@ const { title, description = "Studio de yoga à Toulouse - Bien-être et sérén
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
     <title>{title}</title>
   </head>
-  <body class="bg-ivory text-soft-black font-inter">
+  <body class="min-h-screen bg-ivory text-soft-black font-inter">
+    <Navbar />
     <slot />
+    <Footer />
     <ScrollToTop />
   </body>
 </html> 

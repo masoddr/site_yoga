@@ -3,119 +3,185 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 ---
 
-<BaseLayout title="Tarifs - Yoga Studio Toulouse">
+<BaseLayout title="Tarifs - Yoga Studio">
   <Navbar />
-  <main class="pt-16">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <h1 class="font-playfair text-4xl text-center mb-12">Nos Tarifs</h1>
+  
+  <!-- Hero section avec image de fond -->
+  <div class="relative h-[40vh] min-h-[400px]">
+    <div class="absolute inset-0">
+      <img
+        src="/images/tarifs-bg.jpg"
+        alt="Salle de yoga"
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/50"></div>
+    </div>
+    <div class="relative h-full flex items-center justify-center">
+      <h1 class="text-4xl md:text-5xl text-white font-playfair text-center">
+        Nos tarifs
+      </h1>
+    </div>
+  </div>
 
-      <!-- Offre découverte -->
-      <div class="bg-ochre/10 p-8 rounded-lg mb-12 text-center">
-        <h2 class="font-playfair text-2xl mb-4">Offre Découverte</h2>
-        <p class="text-lg mb-4">Premier cours offert pour les nouveaux élèves</p>
-        <a
-          href="/contact"
-          class="inline-block bg-ochre hover:bg-terracotta text-white px-8 py-3 rounded-md transition-colors"
-        >
-          Réserver
-        </a>
-      </div>
-
-      <!-- Grille des tarifs -->
-      <div class="grid md:grid-cols-3 gap-8">
+  <main class="py-12">
+    <div class="container-custom">
+      <!-- Cartes des tarifs -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         <!-- Carte unique -->
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="font-playfair text-xl mb-4">Carte 10 cours</h3>
-          <p class="text-3xl font-bold mb-4">150€</p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center">
+        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+          <h2 class="font-playfair text-2xl mb-4">Cours à l'unité</h2>
+          <div class="text-4xl font-bold text-ochre mb-6">20€</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Valable 3 mois
+              Cours de 1h30
             </li>
-            <li class="flex items-center">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Tous les cours inclus
+              Tous niveaux
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Matériel fourni
             </li>
           </ul>
-          <a
-            href="/contact"
-            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
-          >
-            Choisir
-          </a>
+          <a href="/contact" class="btn-primary block w-full">Réserver</a>
         </div>
 
-        <!-- Abonnement mensuel -->
-        <div class="bg-white p-8 rounded-lg shadow-sm border-2 border-ochre">
-          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-ochre text-white px-4 py-1 rounded-full text-sm">
+        <!-- Carte 10 cours -->
+        <div class="bg-white rounded-lg shadow-md p-8 text-center border-2 border-ochre">
+          <div class="absolute top-0 right-0 bg-ochre text-white px-4 py-1 rounded-bl-lg">
             Populaire
           </div>
-          <h3 class="font-playfair text-xl mb-4">Abonnement mensuel</h3>
-          <p class="text-3xl font-bold mb-4">89€<span class="text-lg">/mois</span></p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center">
+          <h2 class="font-playfair text-2xl mb-4">Carnet 10 cours</h2>
+          <div class="text-4xl font-bold text-ochre mb-6">180€</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Cours illimités
+              10 cours de 1h30
             </li>
-            <li class="flex items-center">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Engagement 3 mois
+              Valable 6 mois
             </li>
-            <li class="flex items-center">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Accès aux ateliers
+              Matériel fourni
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              -10% sur le prix unitaire
             </li>
           </ul>
-          <a
-            href="/contact"
-            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
-          >
-            Choisir
-          </a>
+          <a href="/contact" class="btn-primary block w-full">Réserver</a>
         </div>
 
-        <!-- Abonnement annuel -->
-        <div class="bg-white p-8 rounded-lg shadow-sm">
-          <h3 class="font-playfair text-xl mb-4">Abonnement annuel</h3>
-          <p class="text-3xl font-bold mb-4">799€<span class="text-lg">/an</span></p>
-          <ul class="space-y-3 mb-6">
-            <li class="flex items-center">
+        <!-- Carte illimité -->
+        <div class="bg-white rounded-lg shadow-md p-8 text-center">
+          <h2 class="font-playfair text-2xl mb-4">Abonnement mensuel</h2>
+          <div class="text-4xl font-bold text-ochre mb-6">120€</div>
+          <ul class="space-y-4 mb-8">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               Cours illimités
             </li>
-            <li class="flex items-center">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              -2 mois offerts
+              Tous les cours
             </li>
-            <li class="flex items-center">
+            <li class="flex items-center justify-center">
               <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Accès VIP aux ateliers
+              Matériel fourni
+            </li>
+            <li class="flex items-center justify-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Réservation prioritaire
             </li>
           </ul>
-          <a
-            href="/contact"
-            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
-          >
-            Choisir
-          </a>
+          <a href="/contact" class="btn-primary block w-full">Réserver</a>
+        </div>
+      </div>
+
+      <!-- Informations supplémentaires -->
+      <div class="mt-16 grid md:grid-cols-2 gap-8">
+        <!-- Conditions -->
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <h2 class="font-playfair text-2xl mb-6">Conditions</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Premier cours d'essai à 15€</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Réservation obligatoire 24h à l'avance</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Annulation possible jusqu'à 24h avant le cours</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Paiement -->
+        <div class="bg-white rounded-lg shadow-md p-8">
+          <h2 class="font-playfair text-2xl mb-6">Modes de paiement</h2>
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Carte bancaire</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Espèces</span>
+            </li>
+            <li class="flex items-start">
+              <svg class="w-6 h-6 text-ochre mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Chèque</span>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </main>
-</BaseLayout> 
+</BaseLayout>
+
+<style>
+  .btn-primary {
+    @apply bg-ochre hover:bg-terracotta text-white py-3 px-6 rounded-md transition-colors;
+  }
+</style> 
