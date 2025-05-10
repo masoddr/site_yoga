@@ -87,10 +87,20 @@ document.addEventListener('DOMContentLoaded', function () {
   const line1 = document.getElementById('line1');
   const line2 = document.getElementById('line2');
   const line3 = document.getElementById('line3');
+  const navbar = document.getElementById('navbar');
   let isMenuOpen = false;
 
   console.log('menuButton =', menuButton);
   console.log('mobileMenu =', mobileMenu);
+
+  // Ajoute un fond semi-transparent au header lors du scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      navbar?.classList.add('bg-black/80');
+    } else {
+      navbar?.classList.remove('bg-black/80');
+    }
+  });
 
   // Animation fluide du menu mobile
   const openMenu = () => {
