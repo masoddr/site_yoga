@@ -1,0 +1,79 @@
+---
+// About section with parallax effect
+---
+
+<section class="relative py-20">
+  <!-- Parallax background -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute inset-0 bg-black/60 z-10"></div>
+    <img
+      src="/images/about-yoga.jpg"
+      alt="Studio de yoga"
+      class="absolute w-full h-full object-cover transform scale-110"
+      style="transform: translateY(var(--scroll-offset, 0))"
+    />
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <!-- Texte -->
+      <div class="text-white">
+        <h2 class="font-playfair text-4xl mb-6">Notre Studio</h2>
+        <p class="text-lg mb-6">
+          Bienvenue dans notre espace dédié au bien-être et à la sérénité. Notre studio de yoga à Toulouse 
+          est conçu pour vous offrir une expérience unique, dans un cadre apaisant et propice à la pratique.
+        </p>
+        <p class="text-lg mb-8">
+          Avec des cours adaptés à tous les niveaux, des professeurs expérimentés et un équipement de qualité, 
+          nous vous accompagnons dans votre pratique du yoga, que vous soyez débutant ou confirmé.
+        </p>
+        <a
+          href="/contact"
+          class="inline-block bg-ochre hover:bg-terracotta text-white px-8 py-3 rounded-md transition-colors"
+        >
+          Découvrir nos cours
+        </a>
+      </div>
+
+      <!-- Images -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-4">
+          <img
+            src="/images/studio-1.jpg"
+            alt="Salle de yoga"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+          <img
+            src="/images/studio-2.jpg"
+            alt="Cours de yoga"
+            class="w-full h-64 object-cover rounded-lg"
+          />
+        </div>
+        <div class="space-y-4 pt-8">
+          <img
+            src="/images/studio-3.jpg"
+            alt="Équipement de yoga"
+            class="w-full h-64 object-cover rounded-lg"
+          />
+          <img
+            src="/images/studio-4.jpg"
+            alt="Espace détente"
+            class="w-full h-48 object-cover rounded-lg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Effet de parallax
+  document.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallaxElement = document.querySelector('img[alt="Studio de yoga"]');
+    if (parallaxElement) {
+      parallaxElement.style.setProperty('--scroll-offset', `${scrolled * 0.5}px`);
+    }
+  });
+</script> 

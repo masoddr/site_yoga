@@ -1,0 +1,29 @@
+---
+// Base layout with common elements
+import ScrollToTop from '../components/ScrollToTop.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Studio de yoga à Toulouse - Bien-être et sérénité" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>{title}</title>
+  </head>
+  <body class="bg-ivory text-soft-black font-inter">
+    <slot />
+    <ScrollToTop />
+  </body>
+</html> 

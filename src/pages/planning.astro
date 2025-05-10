@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+
+// Données des cours (à remplacer par des données dynamiques plus tard)
+const cours = [
+  { jour: "Lundi", horaires: [
+    { heure: "9h00", type: "Hatha Yoga", niveau: "Tous niveaux" },
+    { heure: "12h00", type: "Yoga Flow", niveau: "Intermédiaire" },
+    { heure: "18h30", type: "Yin Yoga", niveau: "Tous niveaux" }
+  ]},
+  { jour: "Mardi", horaires: [
+    { heure: "9h00", type: "Vinyasa", niveau: "Intermédiaire" },
+    { heure: "12h00", type: "Hatha Yoga", niveau: "Débutant" },
+    { heure: "19h00", type: "Yoga Flow", niveau: "Tous niveaux" }
+  ]},
+  { jour: "Mercredi", horaires: [
+    { heure: "9h00", type: "Yin Yoga", niveau: "Tous niveaux" },
+    { heure: "12h00", type: "Vinyasa", niveau: "Avancé" },
+    { heure: "18h30", type: "Hatha Yoga", niveau: "Tous niveaux" }
+  ]},
+  { jour: "Jeudi", horaires: [
+    { heure: "9h00", type: "Yoga Flow", niveau: "Tous niveaux" },
+    { heure: "12h00", type: "Hatha Yoga", niveau: "Intermédiaire" },
+    { heure: "19h00", type: "Vinyasa", niveau: "Tous niveaux" }
+  ]},
+  { jour: "Vendredi", horaires: [
+    { heure: "9h00", type: "Hatha Yoga", niveau: "Tous niveaux" },
+    { heure: "12h00", type: "Yin Yoga", niveau: "Débutant" },
+    { heure: "18h30", type: "Yoga Flow", niveau: "Avancé" }
+  ]},
+  { jour: "Samedi", horaires: [
+    { heure: "9h30", type: "Vinyasa", niveau: "Tous niveaux" },
+    { heure: "11h00", type: "Hatha Yoga", niveau: "Tous niveaux" }
+  ]}
+];
+---
+
+<BaseLayout title="Planning - Yoga Studio Toulouse">
+  <Navbar />
+  <main class="pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="font-playfair text-4xl text-center mb-12">Planning des Cours</h1>
+
+      <!-- Légende -->
+      <div class="mb-8 flex flex-wrap justify-center gap-4">
+        <div class="flex items-center">
+          <div class="w-4 h-4 bg-ochre/20 rounded-full mr-2"></div>
+          <span class="text-sm">Tous niveaux</span>
+        </div>
+        <div class="flex items-center">
+          <div class="w-4 h-4 bg-ochre/40 rounded-full mr-2"></div>
+          <span class="text-sm">Intermédiaire</span>
+        </div>
+        <div class="flex items-center">
+          <div class="w-4 h-4 bg-ochre/60 rounded-full mr-2"></div>
+          <span class="text-sm">Avancé</span>
+        </div>
+      </div>
+
+      <!-- Planning -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {cours.map((journee) => (
+          <div class="bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="font-playfair text-xl mb-4">{journee.jour}</h2>
+            <div class="space-y-4">
+              {journee.horaires.map((cours) => (
+                <div class="flex items-start justify-between p-3 rounded-md bg-ochre/10">
+                  <div>
+                    <p class="font-medium">{cours.heure}</p>
+                    <p class="text-sm text-gray-600">{cours.type}</p>
+                  </div>
+                  <span class="text-sm bg-ochre/20 px-2 py-1 rounded-full">
+                    {cours.niveau}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Note -->
+      <div class="mt-12 text-center text-gray-600">
+        <p>Les cours durent 1h15. Merci d'arriver 10 minutes avant le début du cours.</p>
+        <p class="mt-2">
+          <a href="/contact" class="text-ochre hover:text-terracotta">
+            Réserver un cours →
+          </a>
+        </p>
+      </div>
+    </div>
+  </main>
+</BaseLayout> 

@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import Map from '../components/Map.astro';
+---
+
+<BaseLayout title="Contact - Yoga Studio Toulouse">
+  <Navbar />
+  <main class="pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="font-playfair text-4xl text-center mb-12">Contactez-nous</h1>
+      
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Formulaire de contact -->
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <form class="space-y-6">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Nom</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-ochre focus:border-ochre"
+                required
+              />
+            </div>
+            
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-ochre focus:border-ochre"
+                required
+              />
+            </div>
+            
+            <div>
+              <label for="message" class="block text-sm font-medium mb-2">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-ochre focus:border-ochre"
+                required
+              ></textarea>
+            </div>
+            
+            <button
+              type="submit"
+              class="w-full bg-ochre hover:bg-terracotta text-white py-3 rounded-md transition-colors"
+            >
+              Envoyer
+            </button>
+          </form>
+        </div>
+
+        <!-- Informations de contact -->
+        <div class="space-y-8">
+          <div>
+            <h2 class="font-playfair text-2xl mb-4">Adresse</h2>
+            <p class="text-gray-600">
+              16 Rue Joseph Lakanal<br />
+              31000 Toulouse<br />
+              France
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-playfair text-2xl mb-4">Horaires</h2>
+            <p class="text-gray-600">
+              Lundi - Vendredi : 9h - 20h<br />
+              Samedi : 9h - 18h<br />
+              Dimanche : Fermé
+            </p>
+          </div>
+
+          <div>
+            <h2 class="font-playfair text-2xl mb-4">Contact</h2>
+            <p class="text-gray-600">
+              Téléphone : 05 XX XX XX XX<br />
+              Email : contact@yogastudio.fr
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carte -->
+      <div class="mt-12">
+        <h2 class="font-playfair text-2xl mb-6 text-center">Notre localisation</h2>
+        <Map />
+      </div>
+    </div>
+  </main>
+</BaseLayout> 

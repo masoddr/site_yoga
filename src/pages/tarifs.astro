@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<BaseLayout title="Tarifs - Yoga Studio Toulouse">
+  <Navbar />
+  <main class="pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <h1 class="font-playfair text-4xl text-center mb-12">Nos Tarifs</h1>
+
+      <!-- Offre découverte -->
+      <div class="bg-ochre/10 p-8 rounded-lg mb-12 text-center">
+        <h2 class="font-playfair text-2xl mb-4">Offre Découverte</h2>
+        <p class="text-lg mb-4">Premier cours offert pour les nouveaux élèves</p>
+        <a
+          href="/contact"
+          class="inline-block bg-ochre hover:bg-terracotta text-white px-8 py-3 rounded-md transition-colors"
+        >
+          Réserver
+        </a>
+      </div>
+
+      <!-- Grille des tarifs -->
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Carte unique -->
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="font-playfair text-xl mb-4">Carte 10 cours</h3>
+          <p class="text-3xl font-bold mb-4">150€</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Valable 3 mois
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Tous les cours inclus
+            </li>
+          </ul>
+          <a
+            href="/contact"
+            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
+          >
+            Choisir
+          </a>
+        </div>
+
+        <!-- Abonnement mensuel -->
+        <div class="bg-white p-8 rounded-lg shadow-sm border-2 border-ochre">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-ochre text-white px-4 py-1 rounded-full text-sm">
+            Populaire
+          </div>
+          <h3 class="font-playfair text-xl mb-4">Abonnement mensuel</h3>
+          <p class="text-3xl font-bold mb-4">89€<span class="text-lg">/mois</span></p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Cours illimités
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Engagement 3 mois
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Accès aux ateliers
+            </li>
+          </ul>
+          <a
+            href="/contact"
+            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
+          >
+            Choisir
+          </a>
+        </div>
+
+        <!-- Abonnement annuel -->
+        <div class="bg-white p-8 rounded-lg shadow-sm">
+          <h3 class="font-playfair text-xl mb-4">Abonnement annuel</h3>
+          <p class="text-3xl font-bold mb-4">799€<span class="text-lg">/an</span></p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Cours illimités
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              -2 mois offerts
+            </li>
+            <li class="flex items-center">
+              <svg class="w-5 h-5 text-ochre mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              Accès VIP aux ateliers
+            </li>
+          </ul>
+          <a
+            href="/contact"
+            class="block text-center bg-ochre hover:bg-terracotta text-white py-2 rounded-md transition-colors"
+          >
+            Choisir
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout> 
